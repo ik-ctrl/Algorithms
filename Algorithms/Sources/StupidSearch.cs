@@ -4,8 +4,8 @@ namespace Algorithms.Sources
 {
     public class StupidSearch : IAlgorithmStatistics
     {
-        private int _stepsCount = 0;
-        private double _timeSpent = 0;
+        private int _stepsCount=default;
+        private double _timeSpent=default;
 
         /// <summary>
         /// Запуск алгоритма тупого поиска

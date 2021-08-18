@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Algorithms.Sources
+﻿namespace Algorithms.Sources
 {
     /// <summary>
     /// Статистика алгоритма
