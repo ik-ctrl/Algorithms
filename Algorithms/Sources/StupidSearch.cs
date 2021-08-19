@@ -1,8 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Algorithms.Sources
 {
-    public class StupidSearch : IAlgorithmStatistics
+    /// <summary>
+    /// Сущность реализующая "тупой" поиск
+    /// </summary>
+    public class StupidSearch : ISearchingAlgorithm
     {
         private int _stepsCount=default;
         private double _timeSpent=default;
@@ -15,7 +20,12 @@ namespace Algorithms.Sources
         /// <returns>Индекс искомого числа или -1</returns>
         public int Process(int[] array, int needItem)
         {
-            if (array == null) return -1;
+            if (array != null)
+                throw new ArgumentNullException(nameof(array));
+
+            if (!array.Any())
+                return -1;
+            
             var watch = new Stopwatch();
             StartWatch(watch);
             for (int i = 0; i < array.Length - 1; i++)
