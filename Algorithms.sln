@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{E5B40AAF-8D8E-4A4D-BE49-4F8EF91372EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.csproj", "{3CB134E6-397C-4B18-8038-5A00F92673B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E5B40AAF-8D8E-4A4D-BE49-4F8EF91372EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5B40AAF-8D8E-4A4D-BE49-4F8EF91372EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5B40AAF-8D8E-4A4D-BE49-4F8EF91372EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
