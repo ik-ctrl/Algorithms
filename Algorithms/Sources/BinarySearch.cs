@@ -7,7 +7,7 @@ namespace Algorithms.Sources
     public class BinarySearch : ISearchingAlgorithm
     {
         private int _stepsCount;
-        private double _timeSpent;
+        private long _timeSpent;
 
         /// <summary>
         /// Запуск алгоритма бинарного поиска
@@ -17,12 +17,13 @@ namespace Algorithms.Sources
         /// <returns>Индекс искомого числа или -1</returns>
         public int Process(int[] array, int needItem)
         {
-            if (array != null)
+            if (array == null)
                 throw new ArgumentNullException(nameof(array));
 
             if (!array.Any())
                 return -1;
-            
+
+            _stepsCount = 0;
             var lowIndex = 0;
             var highIndex = array.Length - 1;
             var watch = new Stopwatch();
@@ -52,10 +53,10 @@ namespace Algorithms.Sources
         /// </summary>
         public int StepsCount => _stepsCount;
         
-        /// <summary>
+        /// <summary>s
         /// Затраченное время
         /// </summary>
-        public double TimeSpent => _timeSpent;
+        public long TimeSpent => _timeSpent;
 
         /// <summary>
         /// Сброс статистики

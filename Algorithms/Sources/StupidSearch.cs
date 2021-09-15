@@ -10,7 +10,7 @@ namespace Algorithms.Sources
     public class StupidSearch : ISearchingAlgorithm
     {
         private int _stepsCount=default;
-        private double _timeSpent=default;
+        private long _timeSpent=default;
 
         /// <summary>
         /// Запуск алгоритма тупого поиска
@@ -20,15 +20,17 @@ namespace Algorithms.Sources
         /// <returns>Индекс искомого числа или -1</returns>
         public int Process(int[] array, int needItem)
         {
-            if (array != null)
+            
+            if (array == null)
                 throw new ArgumentNullException(nameof(array));
 
             if (!array.Any())
                 return -1;
-            
+
+            _stepsCount = 0;
             var watch = new Stopwatch();
             StartWatch(watch);
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i <= array.Length - 1; i++)
             {
                 _stepsCount++;
                 if (array[i] == needItem)
@@ -49,7 +51,7 @@ namespace Algorithms.Sources
         /// <summary>
         /// Затраченное время
         /// </summary>
-        public double TimeSpent => _timeSpent;
+        public long TimeSpent => _timeSpent;
         
         /// <summary>
         /// Сброс данных
@@ -66,7 +68,7 @@ namespace Algorithms.Sources
         /// <param name="watch">Запускаемый таймер</param>
         private void StartWatch(Stopwatch watch)
         {
-            watch.Restart();
+            watch.Start();
         }
         
         /// <summary>

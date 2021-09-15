@@ -3,7 +3,7 @@
     /// <summary>
     /// Статистика алгоритма
     /// </summary>
-    public interface ISearchingAlgorithm
+    public interface ISearchingAlgorithm:IAlgorithmStatistics
     {
         /// <summary>
         /// Запуск алгоритма тупого поиска
@@ -12,20 +12,5 @@
         /// <param name="needItem">Необходимое число</param>
         /// <returns>Индекс искомого числа или -1</returns>
         public int Process(int[] array, int needItem);
-        
-        /// <summary>
-        /// Количество шагов
-        /// </summary>
-        public int StepsCount { get; }
-
-        /// <summary>
-        /// Затраченное время в секундах
-        /// </summary>
-        public double TimeSpent { get; }
-
-        /// <summary>
-        /// Стирание данных
-        /// </summary>
-        public void Flush();
     }
 }

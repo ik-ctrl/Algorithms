@@ -10,7 +10,7 @@
         /// <summary>
         /// Затраченное время в секундах
         /// </summary>
-        public double TimeSpent { get; }
+        public long TimeSpent { get; }
 
         /// <summary>
         /// Очистка данных
