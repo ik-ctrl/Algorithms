@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.csproj", "{3CB134E6-397C-4B18-8038-5A00F92673B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersEntities", "HelpersEntities\HelpersEntities.csproj", "{16B5C2A4-B358-4564-B3B0-BD725943A919}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CB134E6-397C-4B18-8038-5A00F92673B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B5C2A4-B358-4564-B3B0-BD725943A919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B5C2A4-B358-4564-B3B0-BD725943A919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B5C2A4-B358-4564-B3B0-BD725943A919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B5C2A4-B358-4564-B3B0-BD725943A919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
