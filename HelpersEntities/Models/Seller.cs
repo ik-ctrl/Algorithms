@@ -14,11 +14,10 @@
         /// Имя продавца
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
         /// Был ли человек проверен алгоритмом
         /// </summary>
-        public bool IsChecked { get; set; }
-        
+        public bool IsChecked { get; set; } = false;
     }
 }
