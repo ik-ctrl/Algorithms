@@ -6,7 +6,6 @@ namespace Algorithms.Sources
 {
     public class BinarySearch : ISearchingAlgorithm
     {
-        private int _stepsCount;
         private long _timeSpent;
 
         /// <summary>
@@ -22,15 +21,13 @@ namespace Algorithms.Sources
 
             if (!array.Any())
                 return -1;
-
-            _stepsCount = 0;
+            
             var lowIndex = 0;
             var highIndex = array.Length - 1;
             var watch = new Stopwatch();
             StartWatch(watch);
             while (lowIndex <= highIndex)
             {
-                _stepsCount++;
                 var middleIndex = (lowIndex + highIndex) / 2;
                 var theory = array[middleIndex];
                 if (needItem == theory)
@@ -48,11 +45,6 @@ namespace Algorithms.Sources
             return -1;
         }
 
-        /// <summary>
-        /// Количестов шагов затраченных
-        /// </summary>
-        public int StepsCount => _stepsCount;
-        
         /// <summary>s
         /// Затраченное время
         /// </summary>
@@ -63,7 +55,6 @@ namespace Algorithms.Sources
         /// </summary>
         public void Flush()
         {
-            _stepsCount = default;
             _timeSpent = default;
         }
         

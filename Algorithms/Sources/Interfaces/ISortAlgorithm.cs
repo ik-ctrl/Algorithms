@@ -1,6 +1,6 @@
 ﻿namespace Algorithms.Sources
 {
-    public interface ISortAlgorithm:IAlgorithmStatistics
+    public interface ISortAlgorithm
     {
         /// <summary>
         /// Сортировка по возрастанию

@@ -9,25 +9,6 @@ namespace Algorithms.Sources
     /// </summary>
     public class QuickSort : ISortAlgorithm
     {
-        private int _stepsCount;
-        private long _timeSpent;
-
-        /// <summary>
-        /// Количестов шагов затраченных - реализовать не получится из - за рекурсии. (Если делать отдельную обертку , то получится)
-        /// </summary>
-        public int StepsCount => _stepsCount;
-
-        /// <summary>s
-        /// Затраченное время- реализовать не получится из - за рекурсии. (Если делать отдельную обертку , то получится)
-        /// </summary>
-        public long TimeSpent => _timeSpent;
-
-        public void Flush()
-        {
-            _stepsCount = default;
-            _timeSpent = default;
-        }
-
         /// <summary>
         /// Сортировка по возрастанию
         /// </summary>

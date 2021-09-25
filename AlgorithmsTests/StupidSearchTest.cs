@@ -18,7 +18,6 @@ namespace AlgorithmsTests
             var searcher = new StupidSearch(); 
             var index= searcher.Process(array, item);
             Assert.AreEqual(indexItem,index);
-            Assert.AreEqual(stepCount,searcher.StepsCount);
         }
         
         [TestCase( null, 5, 4, 5)]
@@ -47,7 +46,6 @@ namespace AlgorithmsTests
             var searcher = new StupidSearch(); 
             var index= searcher.Process(array, item);
             searcher.Flush();
-            Assert.AreEqual(stepsCount,searcher.StepsCount);
             Assert.AreEqual(expectedTime,searcher.TimeSpent);
         }
         

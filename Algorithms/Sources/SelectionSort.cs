@@ -8,15 +8,9 @@ namespace Algorithms.Sources
     /// <summary>
     /// Сортировка выбором | O(n^2)
     /// </summary>
-    public class SelectionSort : ISortAlgorithm
+    public class SelectionSort : ISortAlgorithm,IAlgorithmStatistics
     {
-        private int _stepsCount;
         private long _timeSpent;
-
-        /// <summary>
-        /// Количестов шагов затраченных
-        /// </summary>
-        public int StepsCount => _stepsCount;
 
         /// <summary>s
         /// Затраченное время
@@ -28,7 +22,6 @@ namespace Algorithms.Sources
         /// </summary>
         public void Flush()
         {
-            _stepsCount = default;
             _timeSpent = default;
         }
 
@@ -73,12 +66,10 @@ namespace Algorithms.Sources
             StartWatch(watch);
             for (var i = 0; i <= iteration; i++)
             {
-                _stepsCount++;
                 var (value, index) = FindSmallestValue(copyArray);
                 newArray.Add(value);
                 copyArray = DeleteElementByIndex(copyArray, index);
             }
-
             StopWatch(watch);
             return newArray.ToArray();
         }
@@ -89,9 +80,7 @@ namespace Algorithms.Sources
         /// <param name="array"> Массив</param>
         /// <param name="index">Индекс</param>
         /// <returns></returns>
-        private int[] DeleteElementByIndex(int[] array, int index) =>
-            array.Take(index).Concat(array.Skip(index + 1)).ToArray();
-
+        private int[] DeleteElementByIndex(int[] array, int index) => array.Take(index).Concat(array.Skip(index + 1)).ToArray();
 
         /// <summary>
         /// Сортировка по убыванию
@@ -115,7 +104,6 @@ namespace Algorithms.Sources
             StartWatch(watch);
             for (var i = 0; i <= iteration; i++)
             {
-                _stepsCount++;
                 var (value, index) = FindHighestValue(copyArray);
                 newArray.Add(value);
                 copyArray = DeleteElementByIndex(copyArray, index);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using HelpersEntities;
 
@@ -38,17 +39,23 @@ namespace Algorithms.Sources
 
             if (!_graph.ContainsKey(startNode))
                 throw new ArgumentException("start node does not contain  in graph");
-
+            
             ResetCheckValue(_graph);
+            var watch = new Stopwatch();
+            StartWatch(watch);
             AddNeighborsToQueue(startNode);
             while (_queue.Any())
             {
                 var seller = _queue.Dequeue();
                 seller.IsChecked = true;
                 if (seller.Type == needType)
+                {
+                    StopWatch(watch);
                     return seller;
+                }
                 AddNeighborsToQueue(seller);
             }
+            StopWatch(watch);
             return null;
         }
 
@@ -60,13 +67,31 @@ namespace Algorithms.Sources
         {
             if (neighbor != null&&!neighbor.IsChecked) _queue.Enqueue(neighbor);
         });
-
-
-        //todo: удалить потом
-        public int StepsCount { get; }
-
+        
+        /// <summary>
+        /// Время выполнения алгоритма
+        /// </summary>
         public long TimeSpent => _timeSpent;
 
+        /// <summary>
+        /// Запуск таймера
+        /// </summary>
+        /// <param name="watch">таймер</param>
+        private void StartWatch(Stopwatch watch)
+        {
+            watch?.Restart();
+        }
+
+        /// <summary>
+        /// Фиксирования времени выполнения и остановка таймера
+        /// </summary>
+        /// <param name="stopwatch">Таймер/param>
+        private void StopWatch(Stopwatch stopwatch)
+        {
+            _timeSpent = stopwatch.ElapsedMilliseconds;
+            stopwatch.Stop();
+        } 
+        
         /// <summary>
         /// Cброс значений таймера
         /// </summary>
